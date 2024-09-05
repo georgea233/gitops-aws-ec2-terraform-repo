@@ -4,6 +4,8 @@ terraform {
 
 provider "aws" { 
   region = var.aws_region
+  profile = "george"
+
 }
 
 # Security group for SonarQube
@@ -71,6 +73,6 @@ resource "aws_instance" "sonarqube" {
   user_data = file("install_sonarqube.sh")
 
   tags = {
-    Name = "SonarQube Instance"
+    Name = "SonarQube-Instance"
   }
 }
